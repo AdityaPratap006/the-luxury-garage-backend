@@ -16,10 +16,8 @@ const bookingHistory = require('./controllers/bookingHistory.js');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-clear-22143',
-    user : 'postgres',
-    password : 'kitu',
-    database : 'the_luxury_garage'
+    host : process.env.DATABASE_URL,
+    ssl : true,
   }
 });
 
