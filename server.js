@@ -73,6 +73,6 @@ app.get('/invoice/:bookingid',(req,res)=>{invoice.getInvoice(req,res,db)});
 
 app.get('/bookinghistory/:id',(req,res) => {bookingHistory.getList(req,res,db)});
 
-app.listen(4000,()=>{
-	console.log('app is running on port 4000');
+app.listen(process.env.PORT || 4000,()=>{
+	console.log(`app is running on port ${process.env.PORT}`);
 });
